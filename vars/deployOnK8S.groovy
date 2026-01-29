@@ -1,4 +1,4 @@
-def call(String API_SERVER, String SERVICEACCOUNT_TOKEN, String IMAGE_NAME, String DEPLOYMENT_FILE) { {
+def call(String API_SERVER, String SERVICEACCOUNT_TOKEN, String IMAGE_NAME, String DEPLOYMENT_FILE) { 
 
      sh "sed -i 's|image: .*|image: ${IMAGE_NAME}:${BUILD_NUMBER}|' ${DEPLOYMENT_FILE}"
              

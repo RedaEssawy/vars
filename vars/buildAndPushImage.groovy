@@ -1,4 +1,4 @@
-def call(String imageName, String dockerCredentialsId) { {
+def call(String imageName, String dockerCredentialsId) { 
     sh "docker build -t ${imageName}:${BUILD_NUMBER} ."
     withCredentials([usernamePassword(credentialsId: dockerCredentialsId, passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
         sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin"
